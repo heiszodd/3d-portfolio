@@ -1,24 +1,3 @@
-import { lazy, Suspense } from "react";
 import "./App.css";
-
-const CharacterModel = lazy(() => import("./components/Character"));
-const MainContainer = lazy(() => import("./components/MainContainer"));
-import { LoadingProvider } from "./context/LoadingProvider";
-
-const App = () => {
-  return (
-    <>
-      <LoadingProvider>
-        <Suspense>
-          <MainContainer>
-            <Suspense>
-              <CharacterModel />
-            </Suspense>
-          </MainContainer>
-        </Suspense>
-      </LoadingProvider>
-    </>
-  );
-};
-
-export default App;
+const projects=[['01','ABYSSAL BLOOM','3D OCEAN DESCENT','An immersive descent through bioluminescent ecosystems — WebGL as a place, not decoration.','THREE.JS / WEBGL / SHADERS'],['02','ZSP TERMINAL','TRADING ENGINE','A high-performance market interface for reading volatility and executing ideas at the speed of data.','TYPESCRIPT / REACT / PYTHON'],['03','SYNAPTRIKS','WEB3 OPERATING SYSTEM','A modular command layer for decentralized products, identities, and on-chain coordination.','SOLIDITY / VIEM / NEXT.JS'],['04','LAND / TELEGRAM HUB','COMMUNITY INFRASTRUCTURE','A living gateway between digital land, Telegram culture, and the people building what comes next.','WEB3 / AUTOMATION / PRODUCT']];
+export default function App(){return <main><nav><a className="mark" href="#top">Z<span>/</span>D</a><div className="navlinks"><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div><a className="status" href="https://t.me/zoddspace"><i/> AVAILABLE FOR ZERO→ONE</a></nav><section className="hero" id="top"><div><p className="eyebrow">AHMAD NURA / @HEISZODD / LAGOS, NG</p><h1>I BUILD<br/><em>WORLDS</em><br/>FOR THE WEB<span>.</span></h1><p className="lede">Full-Stack Developer · Web3 Builder · 3D Web Creative</p><a className="cta" href="#work">ENTER THE WORK ↘</a></div><div className="orb-wrap"><div className="orb"><div/></div><div className="ring r1"/><div className="ring r2"/><label>REALITY<br/>LOADING</label></div><div className="scroll">SCROLL TO EXPLORE ↓</div></section><section className="manifesto" id="about"><p className="eyebrow">01 / THE ETHOS</p><h2>ZERO TO ONE,<br/><em>MADE TANGIBLE.</em></h2><p className="manifesto-text">I’m Zodd — Ahmad Nura. I build zero-to-one digital experiences where high-performance systems meet strange, beautiful interfaces. Decentralized apps, immersive 3D environments, and products engineered to feel inevitable.</p></section><section className="work" id="work"><div className="section-head"><p className="eyebrow">02 / SELECTED WORLDS</p><span>04 PROJECTS / 2026</span></div>{projects.map(p=><article className="project" key={p[0]}><span>{p[0]}</span><div><small>{p[2]}</small><h3>{p[1]}</h3><p>{p[3]}</p><small>{p[4]}</small></div><b>↗</b></article>)}</section><section className="stack"><p className="eyebrow">03 / THE TOOLKIT</p><div className="stack-grid">{['TYPESCRIPT','REACT / NEXT.JS','THREE.JS / WEBGL','SOLIDITY','VIEM / ETHERS','TAILWIND CSS','PYTHON','GSAP / MOTION'].map(x=><span key={x}>{x}</span>)}</div></section><section className="contact" id="contact"><p className="eyebrow">04 / START A SIGNAL</p><h2>HAVE A WORLD<br/><em>TO BUILD?</em></h2><a className="contact-link" href="mailto:cryptozodd9@gmail.com">cryptozodd9@gmail.com ↗</a><div className="social"><a href="https://t.me/zoddspace">TELEGRAM / @ZODDSPACE</a><a href="https://github.com/heiszodd">GITHUB / HEISZODD</a></div></section><footer><span>ZODD / AHMAD NURA</span><span>© 2026 — BUILT FOR THE 3D WEB</span><span>NO TEMPLATE. JUST SIGNAL.</span></footer></main>}
