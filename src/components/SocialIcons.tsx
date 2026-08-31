@@ -1,21 +1,2 @@
-import { FaGithub, FaTelegram } from "react-icons/fa6";
-import "./styles/SocialIcons.css";
-import { TbNotes } from "react-icons/tb";
-import { useEffect } from "react";
-import HoverLinks from "./HoverLinks";
-
-const SocialIcons = () => {
-  useEffect(() => {
-    const social = document.getElementById("social") as HTMLElement;
-    social?.querySelectorAll("span").forEach((item) => {
-      const elem = item as HTMLElement; const link = elem.querySelector("a") as HTMLElement; const rect = elem.getBoundingClientRect();
-      let mouseX = rect.width / 2, mouseY = rect.height / 2, currentX = 0, currentY = 0;
-      const update = () => { currentX += (mouseX-currentX)*0.1; currentY += (mouseY-currentY)*0.1; link?.style.setProperty("--siLeft", `${currentX}px`); link?.style.setProperty("--siTop", `${currentY}px`); requestAnimationFrame(update); };
-      const onMove = (e: MouseEvent) => { const x=e.clientX-rect.left,y=e.clientY-rect.top; if(x<40&&x>10&&y<40&&y>5){mouseX=x;mouseY=y;}else{mouseX=rect.width/2;mouseY=rect.height/2;} };
-      document.addEventListener("mousemove", onMove); update();
-      return () => document.removeEventListener("mousemove", onMove);
-    });
-  }, []);
-  return <div className="icons-section"><div className="social-icons" data-cursor="icons" id="social"><span><a href="https://github.com/heiszodd" target="_blank" rel="noreferrer"><FaGithub /></a></span><span><a href="https://t.me/zoddspace" target="_blank" rel="noreferrer"><FaTelegram /></a></span></div><a className="resume-button" href="https://github.com/heiszodd" target="_blank" rel="noreferrer"><HoverLinks text="GITHUB" /><span><TbNotes /></span></a></div>;
-};
-export default SocialIcons;
+import { FaGithub, FaTelegram, FaYoutube } from "react-icons/fa6"; import "./styles/SocialIcons.css"; import { TbNotes } from "react-icons/tb"; import { useEffect } from "react"; import HoverLinks from "./HoverLinks";
+const SocialIcons=()=>{useEffect(()=>{const social=document.getElementById("social") as HTMLElement;social?.querySelectorAll("span").forEach(item=>{const elem=item as HTMLElement,link=elem.querySelector("a") as HTMLElement,rect=elem.getBoundingClientRect();let mouseX=rect.width/2,mouseY=rect.height/2,currentX=0,currentY=0;const update=()=>{currentX+=(mouseX-currentX)*.1;currentY+=(mouseY-currentY)*.1;link?.style.setProperty("--siLeft",`${currentX}px`);link?.style.setProperty("--siTop",`${currentY}px`);requestAnimationFrame(update)};const onMove=(e:MouseEvent)=>{const x=e.clientX-rect.left,y=e.clientY-rect.top;if(x<40&&x>10&&y<40&&y>5){mouseX=x;mouseY=y}else{mouseX=rect.width/2;mouseY=rect.height/2}};document.addEventListener("mousemove",onMove);update();return()=>document.removeEventListener("mousemove",onMove)})},[]);return <div className="icons-section"><div className="social-icons" data-cursor="icons" id="social"><span><a href="https://github.com/heiszodd" target="_blank" rel="noreferrer"><FaGithub/></a></span><span><a href="https://t.me/zoddspace" target="_blank" rel="noreferrer"><FaTelegram/></a></span><span><a href="https://youtube.com/@synaptriks" target="_blank" rel="noreferrer"><FaYoutube/></a></span></div><a className="resume-button" href="https://github.com/heiszodd" target="_blank" rel="noreferrer"><HoverLinks text="GITHUB"/><span><TbNotes/></span></a></div>};export default SocialIcons;
